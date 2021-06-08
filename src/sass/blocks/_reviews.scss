@@ -1,5 +1,5 @@
 .reviews {
-    padding: 0 17px 48px 17px;
+    padding: 0 0 48px 0;
     &__wrapper {
         margin-top: 60px;
         display: flex;
@@ -9,8 +9,8 @@
     &__img {
         display: block;
         margin: 0 auto;
-        width: 50%;
-        height: 50%;
+        width: 169px;
+        height: 169px;
     }
     &__textWrapper {
         padding-left: 60px;
