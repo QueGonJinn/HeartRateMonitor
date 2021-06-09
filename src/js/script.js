@@ -51,33 +51,42 @@ $(document).ready(function(){
         $('.overlay, #order').fadeIn('slow');
       })
     });
+   
+    //Validate
+    function valideForms(form) {
+      $(form).validate({
+        rules: {
+          name: {
+            required: true,
+            minlength: 3
+          },
+          phone: "required",
+          email: {
+            required: true,
+            email: true
+          }
+        },
+        messages: {
+          name: {
+            required: "Пожалуйста, введите свое имя",
+            minlength: jQuery.validator.format("Введите {0} символов!")
+          },
+          phone: "Пожалуйста, введите свой номер телефона",
+          email: {
+            required: "Пожалуйста, введите свой почту",
+            email: "Неправильный формат почты"
+          }
+        }
+      });
+    };
 
-    $('#consultation-form').validate();
-    $('#consultation form').validate({
-      rules: {
-        name: {
-          required: true,
-          minlength: 3
-        },
-        phone: "required",
-        email: {
-          required: true,
-          email: true
-        }
-      },
-      messages: {
-        name: {
-          required: "Пожалуйста, введите свое имя",
-          minlength: jQuery.validator.format("Введите {0} символов!")
-        },
-        phone: "Пожалуйста, введите свой номер телефона",
-        email: {
-          required: "Пожалуйста, введите свой почту",
-          email: "Неправильно введен адрес почты"
-        }
-      }
-    });
-    $('#order form').validate();
+    valideForms('#consultation-form');
+    valideForms('#consultation form');
+    valideForms('#order form');
+
+    //Mask phone
+
+    $('input[name=phone]').mask("+7 (999) 999-99-99");
 
 
 }); 
