@@ -16,9 +16,18 @@
             display: block;
             margin: 0 auto;
             margin-bottom: 20px;
-        } 
-
+        }    
     }
+    &__icon {
+        cursor: progress;
+         &_animated {
+            animation: heartbeat 1.5s ease infinite ;            
+            &:hover {
+                animation-play-state: paused;
+                }
+            }
+        }
+    
     &__subtitle {
         margin-top: 35px;
         font-weight: 700;
